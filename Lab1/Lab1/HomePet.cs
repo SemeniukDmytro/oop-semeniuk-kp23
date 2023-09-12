@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab1
+namespace Lab2
 {
-    internal class HomePet : IDisposable
+    internal class HomePet : IDisposable, IEquatable<HomePet>
     {
         public string name;
         protected bool _alive;
@@ -97,6 +97,24 @@ namespace Lab1
             }
             _alive = false;
         }
+
+        public bool Equals(HomePet? other)
+        {
+            if (other == null) return false;
+            return (this._qrCodeNumber.Equals(other.QrCodeNumber));
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            HomePet objAsHomePet = obj as HomePet;
+            if (objAsHomePet == null) return false;
+            else return Equals(objAsHomePet);
+        }
+        public override int GetHashCode()
+        {
+            return int.Parse(_qrCodeNumber);
+        }
+
         ~HomePet()
         {
             Die(false);

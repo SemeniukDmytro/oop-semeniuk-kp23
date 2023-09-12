@@ -1,19 +1,20 @@
-﻿using System;
+﻿using Lab2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab1
+namespace Lab2
 {
     internal static class DataBaseManager
     {
         static Dictionary<int, int> dataBase;
         static DataBaseManager()
         {
-            dataBase = PetsDataBase.GetDatabaseInstance();
+            dataBase = PetsOwnersDataBase.GetDatabaseInstance();
         }
-        
+
         public static void AddToDb(string qrCode, int phoneNumber)
         {
             if (qrCode.Length == 7 && !IsPresentedInDB(qrCode))

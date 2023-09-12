@@ -4,24 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab1
+namespace Lab2
 {
-    internal class PetsDataBase
+    internal class PetsDataBase : DataBase
     {
-        private static Dictionary<int, int> petsOwnersNumbers;
+        private List<IPet> _pets;
 
-        private PetsDataBase()
+        public override List<IPet> Data => _pets;
+
+        public override void GetDatabaseInfo()
         {
-            petsOwnersNumbers = new Dictionary<int, int>();
+            foreach (var item in _pets)
+            {
+                item.GetAllInfo();
+            }
+        }
+        public override void AddToDatabase(IPet pet)
+        {
+            if( IsPresented(_pets, pet))
+            {
+                Console.WriteLine("pet has already been added earlier");
+            }
+            else
+            {
+                _pets.Add(pet);
+                Console.WriteLine("pet successfully added");
+            }
         }
 
-        public static Dictionary<int, int> GetDatabaseInstance()
+
+        public override void RemoveFromDatabase(IPet pet)
         {
-            if (petsOwnersNumbers == null)
+            if (IsPresented(_pets, pet))
             {
-                PetsDataBase database = new PetsDataBase();
+                Console.WriteLine("pet successfully removed");
             }
-            return petsOwnersNumbers;
+            else
+            {
+                _pets.Add(pet);
+                Console.WriteLine("there isn't such pet in DataBase");
+            }
         }
     }
 }

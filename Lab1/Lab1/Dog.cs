@@ -1,6 +1,6 @@
-﻿namespace Lab1
+﻿namespace Lab2
 {
-    internal class Dog : HomePet
+    internal class Dog : HomePet, IActivity, IHomeProtector, IPet
     {
 
         public List<string> Commands { get; set; }
@@ -57,6 +57,41 @@
         public override string GetAlias(string name, int age)
         {
             return $"{dogAdjectives[new Random().Next(dogAdjectives.Length)]} {name}";
+        }
+
+        void IHomeProtector.MakeSound()
+        {
+            Console.WriteLine("RRRRR");
+        }
+
+        public void Attack()
+        {
+            Console.WriteLine("Dog is biting burglars");
+        }
+
+        public void ProtectHost()
+        {
+            Console.WriteLine($"RRRRR. (2 seconds later) Dog is biting burglars");
+        }
+
+        public void Play()
+        {
+            Console.WriteLine("Dog is playing with ball");
+        }
+
+        public void HaveAMeal()
+        {
+            Console.WriteLine("Only meals that I eat, are those which my host gives me");
+        }
+
+        void IActivity.MakeSound()
+        {
+            Console.WriteLine("Woof-woof");
+        }
+
+        public void GetAllInfo()
+        {
+            Console.WriteLine($"Name: {Name}, Age: {Age}, QR: {QrCodeNumber}, Owner's phone number: {OwnerPhoneNumber}");
         }
     }
 }
