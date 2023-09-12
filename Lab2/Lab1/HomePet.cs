@@ -36,6 +36,10 @@ namespace Lab2
         }
         public string QrCodeNumber { get => _qrCodeNumber; }
         public int OwnerPhoneNumber { get => PhoneNumberPresented(); }
+
+        
+        public event EventHandler<PetGetLostEventArgs> PetGetLost;
+
         public HomePet(string name, string qrCodeNumber, int age, int ownerPhoneNumber)
         {
             this.name = name;
@@ -49,6 +53,22 @@ namespace Lab2
             this.name = "Unknown";
         }
 
+        public bool Equals(HomePet? other)
+        {
+            if (other == null) return false;
+            return (this._qrCodeNumber.Equals(other.QrCodeNumber));
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            HomePet objAsHomePet = obj as HomePet;
+            if (objAsHomePet == null) return false;
+            else return Equals(objAsHomePet);
+        }
+        public override int GetHashCode()
+        {
+            return int.Parse(_qrCodeNumber);
+        }
         private int PhoneNumberPresented()
         {
             if (DataBaseManager.IsPresentedInDB(_qrCodeNumber))
@@ -98,23 +118,29 @@ namespace Lab2
             _alive = false;
         }
 
-        public bool Equals(HomePet? other)
+        protected virtual void OnPetGetLost()
         {
-            if (other == null) return false;
-            return (this._qrCodeNumber.Equals(other.QrCodeNumber));
+            if(PetGetLost != null)
+            {
+                PetGetLost(this, new PetGetLostEventArgs() { QR = QrCodeNumber});
+            }
         }
-        public override bool Equals(object obj)
+        public void CallOwner()
         {
-            if (obj == null) return false;
-            HomePet objAsHomePet = obj as HomePet;
-            if (objAsHomePet == null) return false;
-            else return Equals(objAsHomePet);
+            if (_qrCodeNumber != null && _qrCodeNumber.Length == 7)
+            {
+                Console.Clear();
+                Console.WriteLine($"Please call my owner on this number {ownerPhoneNumber}");
+                Console.WriteLine("Calling...");
+                Thread.Sleep(3000);
+                OnPetGetLost();
+            }
+            else
+            {
+                Console.WriteLine("I don't have an owner, could you become one?");
+            }
+            
         }
-        public override int GetHashCode()
-        {
-            return int.Parse(_qrCodeNumber);
-        }
-
         ~HomePet()
         {
             Die(false);

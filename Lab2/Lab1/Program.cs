@@ -5,7 +5,7 @@ public class Program
 {
     static void Main(string[] args)
     {
-        IHomeProtector dog = new Dog("saymon", "1234567", 5, 09727, true, new List<string>() { "attack", "protect"}, "Sally");
+        Dog dog = new Dog("saymon", "1234567", 5, 09727, true, new List<string>() { "attack", "protect"}, "Sally");
         Cat cat = new Cat("george", "7654321", 7, 99969, new List<string>() { "back", "chin" });
         PetsDataBase dataBase = new PetsDataBase();
         dataBase.AddToDatabase(cat);
@@ -15,7 +15,10 @@ public class Program
             pet.GetAllInfo();
             pet.ProtectHost();
         }
-        dog.MakeSound();
+        PetOwner steve = new PetOwner("Steve", "1234567", 09727, "Peremohy Ave 10");
+        
+        dog.PetGetLost += steve.OnPetGetLost;
+        dog.CallOwner();
 
     }
 }
