@@ -15,10 +15,12 @@ public class Program
             pet.GetAllInfo();
             pet.ProtectHost();
         }
+        dataBase.Data.ForEach(pet => pet.GetAllInfo());
         PetOwner steve = new PetOwner("Steve", "1234567", 09727, "Peremohy Ave 10");
         
         dog.PetGetLost += steve.OnPetGetLost;
         dog.CallOwner();
+        dog.YellOnPet();
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    internal class HomePet : IDisposable, IEquatable<HomePet>
+    public class HomePet : IDisposable, IEquatable<HomePet>
     {
         public string name;
         protected bool _alive;
@@ -135,9 +135,13 @@ namespace Lab2
                 Thread.Sleep(3000);
                 OnPetGetLost();
             }
+            else if (_qrCodeNumber == null)
+            {
+                throw new CallFailedException(new Args() { code = 404, reason = "homelessPet", status = "Not found" });
+            }
             else
             {
-                Console.WriteLine("I don't have an owner, could you become one?");
+                throw new CallFailedException(new Args() { code = 001, reason = "invalidQR", status = "There isn't such QR code" });
             }
             
         }
