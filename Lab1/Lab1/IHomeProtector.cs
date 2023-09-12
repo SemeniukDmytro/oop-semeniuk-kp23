@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    public interface IHomeProtector
+    public interface IHomeProtector : IPet
     {
         public void MakeSound();
         public void Attack();

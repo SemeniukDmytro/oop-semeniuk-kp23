@@ -8,7 +8,7 @@ namespace Lab2
 {
     internal class PetsDataBase : DataBase
     {
-        private List<IPet> _pets;
+        private List<IPet> _pets = new List<IPet>();
 
         public override List<IPet> Data => _pets;
 

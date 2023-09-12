@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    public interface IActivity
+    public interface IActivity : IPet
     {
         public void Play();
         public void HaveAMeal();
