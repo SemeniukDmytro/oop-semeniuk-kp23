@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab5\\Task1\\Task1\\Task1.csproj": {}
+    "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab4\\Task1\\Task1\\Task1.csproj": {}
   },
   "projects": {
-    "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab5\\Task1\\Task1\\Task1.csproj": {
+    "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab4\\Task1\\Task1\\Task1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab5\\Task1\\Task1\\Task1.csproj",
+        "projectUniqueName": "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab4\\Task1\\Task1\\Task1.csproj",
         "projectName": "Task1",
-        "projectPath": "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab5\\Task1\\Task1\\Task1.csproj",
+        "projectPath": "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab4\\Task1\\Task1\\Task1.csproj",
         "packagesPath": "C:\\Users\\mrsem\\.nuget\\packages\\",
-        "outputPath": "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab5\\Task1\\Task1\\obj\\",
+        "outputPath": "D:\\KPI\\year2\\OOP\\oop-semeniuk-kp23\\Lab4\\Task1\\Task1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
