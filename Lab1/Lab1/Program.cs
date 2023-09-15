@@ -6,7 +6,8 @@ public class Program
     private const int maxGarbage = 100;
     static void Main(string[] args)
     {
-
+        HomePet ashley = new HomePet("Ashley", "0001111", 12, 204999);
+        Console.WriteLine(ashley.GetInfoAboutPet("0001111")); 
         Cat bob = new Cat("Bonny", "1234567", 25, 1999, new List<string>() { "chin", "back" });
         bob.ShowPlacesToStroke();
         Console.WriteLine(bob.GetInfoAboutPet("1234567"));
@@ -16,15 +17,6 @@ public class Program
         }
         MyGarbageCollector mgb = new MyGarbageCollector();
         mgb.ShowMemoryUsage();
-    }
-    static void MakeSomeGarbage()
-    {
-        HomePet tolya;
-        for (int i = 0; i < maxGarbage; i++)
-        {
-            tolya = new HomePet("tolya", "1234567", 16, 229299);
-            Thread.Sleep(1);
-        }
     }
 }
 
