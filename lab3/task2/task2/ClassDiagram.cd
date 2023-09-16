@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="task2.Client" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAABEAAAAAAAAIAgIAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="task2.Internet" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAgAAgAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Internet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="task2.Minutes" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Minutes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="task2.MobileOperator" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAABAAAAAAACAQAAIAEAAAAAABAAAAAAAA=</HashCode>
+      <FileName>MobileOperator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="task2.ProxyOperator" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAACAAABAAAABAAAAQAAIAAAAAAAABQAAAAAAA=</HashCode>
+      <FileName>ProxyOperato.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="task2.Rate">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAABEAAAAAAAAAAQAAAAEAEgAAAAAAAAAAAA=</HashCode>
+      <FileName>Rate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="task2.SMS" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>SMS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="task2.IOperator">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAABAAAAAAAAAQAAIAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>IOperator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
